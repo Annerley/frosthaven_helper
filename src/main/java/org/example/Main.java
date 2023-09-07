@@ -15,16 +15,6 @@ public class Main {
             currentPool.add(new Creature("Wolf", 10));
         }
 
-        for(int i = 0; i < 3; i++){
-
-            currentPool.get(i).changeHitPoints(-5);
-            System.out.println(currentPool.get(i).getName());
-            System.out.println(currentPool.get(i).getHitPoints());
-            System.out.println(currentPool.get(i).getUniqueID());
-        }
-
-
-
 
 
     }
