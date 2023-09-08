@@ -14,7 +14,10 @@
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
 
+        <mapping class = "com.dl.entity.User"/>
 
 
     </session-factory>
