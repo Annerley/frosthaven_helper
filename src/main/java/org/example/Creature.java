@@ -1,44 +1,40 @@
 package org.example;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity
+@Table(name = "creatures")
 public class Creature {
 
-    String uniqueID;
+    @Id
+    int id;
+    @Column(name = "base_hp")
     int hitPoints;
-    int maxHitPoints;
+
+    //int maxHitPoints = hitPoints;
     String name;
 
-    int level;
+    int movement;
+    int baseAttack;
+    int range;
 
-    public Creature(String name, int hitPoints) {
-        this.hitPoints = hitPoints;
-        this.name = name;
-        this.maxHitPoints = hitPoints;
-        uniqueID = UUID.randomUUID().toString();
 
-    }
+    //int level;
 
-    public int getHitPoints() {
-        return hitPoints;
-    }
-
-    public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
-    }
-
-    public String getUniqueID() {
-        return uniqueID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+/*
     void changeHitPoints(int value){
 
         if(value > 0 ){
@@ -52,5 +48,7 @@ public class Creature {
         }
 
     }
+    */
+
 
 }

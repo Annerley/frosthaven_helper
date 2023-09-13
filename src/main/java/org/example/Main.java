@@ -1,4 +1,7 @@
 package org.example;
+import com.dl.entity.UserHelper;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 // Press Shift twice to open the Search Everywhere dialog and type show whitespaces,
@@ -8,22 +11,20 @@ public class Main {
 
 
 
-        LinkedList<Creature> currentPool = new LinkedList<Creature>();
 
-        for(int i = 0; i < 3; i++){
+        ArrayList a = new ArrayList<Creature>();
 
-            currentPool.add(new Creature("Wolf", 10));
-        }
+        int id = new CreatureHelper().getIdByName("Living Bones");
 
-        for(int i = 0; i < 3; i++){
-
-            currentPool.get(i).changeHitPoints(-5);
-            System.out.println(currentPool.get(i).getName());
-            System.out.println(currentPool.get(i).getHitPoints());
-            System.out.println(currentPool.get(i).getUniqueID());
-        }
+        a.add(new CreatureHelper().getCreature(id));
+        System.out.println(a);
 
 
+
+        //roadmap
+        //1 - change hp, db architecture, storing, cache (?)
+        // web
+        // changing through web
 
 
 

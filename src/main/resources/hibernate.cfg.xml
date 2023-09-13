@@ -18,6 +18,7 @@
         <property name="format_sql">true</property>
 
         <mapping class = "com.dl.entity.User"/>
+        <mapping class = "org.example.Creature"/>
 
 
     </session-factory>

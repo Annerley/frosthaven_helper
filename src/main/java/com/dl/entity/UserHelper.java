@@ -10,14 +10,16 @@ public class UserHelper {
 
     public UserHelper() { sessionFactory = HibernateUtil.getSessionFactory();}
 
-    public String getLastName (){
+    public String getLastName (String str){
 
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        User user = session.get(User.class, "maxim@gmail.com");
+        User user = session.get(User.class, str);
 
         session.getTransaction().commit();
         return user.getLastname();
     }
+
+
 }

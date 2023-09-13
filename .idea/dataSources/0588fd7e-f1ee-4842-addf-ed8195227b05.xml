@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>739</IntrospectionStateNumber>
+      <IntrospectionStateNumber>815</IntrospectionStateNumber>
       <ServerVersion>15.4</ServerVersion>
-      <StartupTime>1694180884</StartupTime>
+      <StartupTime>1694516671</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1401,7 +1401,7 @@ true posixrules
 13209||10|C|G
 13209||-9223372036854775808|U|G
 13209||10|U|G</Grants>
-      <IntrospectionStateNumber>739</IntrospectionStateNumber>
+      <IntrospectionStateNumber>815</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4814,51 +4814,110 @@ true posixrules
     <schema id="261" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>739</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-09-08.15:58:47.845</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-09-08.13:58:48</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>815</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-09-12.13:57:41.115</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-09-12.11:57:41</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <table id="262" parent="261" name="users">
+    <table id="262" parent="261" name="creatures">
+      <ObjectId>24621</ObjectId>
+      <StateNumber>814</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="263" parent="261" name="users">
       <ObjectId>16388</ObjectId>
       <StateNumber>738</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="263" parent="262" name="username">
+    <column id="264" parent="262" name="id">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>814</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="265" parent="262" name="base_hp">
+      <DasType>integer|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>814</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="266" parent="262" name="movement">
+      <DasType>integer|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>814</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="267" parent="262" name="base_attack">
+      <DasType>integer|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>814</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="268" parent="262" name="range">
+      <DasType>integer|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>814</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="269" parent="262" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>814</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="270" parent="262" name="creatures_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24624</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>814</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="271" parent="262" name="creatures_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24625</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>814</StateNumber>
+      <UnderlyingIndexId>24624</UnderlyingIndexId>
+    </key>
+    <column id="272" parent="263" name="username">
       <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>738</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="264" parent="262" name="firstname">
+    <column id="273" parent="263" name="firstname">
       <DasType>varchar(128)|0s</DasType>
       <Position>2</Position>
       <StateNumber>738</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="265" parent="262" name="lastname">
+    <column id="274" parent="263" name="lastname">
       <DasType>varchar(128)|0s</DasType>
       <Position>3</Position>
       <StateNumber>738</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="266" parent="262" name="birth_date">
+    <column id="275" parent="263" name="birth_date">
       <DasType>date|0s</DasType>
       <Position>4</Position>
       <StateNumber>738</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="267" parent="262" name="age">
+    <column id="276" parent="263" name="age">
       <DasType>integer|0s</DasType>
       <Position>5</Position>
       <StateNumber>738</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="268" parent="262" name="users_pkey">
+    <index id="277" parent="263" name="users_pkey">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16391</ObjectId>
@@ -4870,7 +4929,7 @@ true posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="269" parent="262" name="users_pkey">
+    <key id="278" parent="263" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16392</ObjectId>
       <Primary>1</Primary>

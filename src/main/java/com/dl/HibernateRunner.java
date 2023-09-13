@@ -23,7 +23,7 @@ public class HibernateRunner {
 
 
 
-        String lastname  = new UserHelper().getLastName();
+        String lastname  = new UserHelper().getLastName("maxim@gmail.com");
         System.out.println(lastname);
 
 
