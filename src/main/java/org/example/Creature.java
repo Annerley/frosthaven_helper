@@ -1,9 +1,6 @@
 package org.example;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,24 +28,14 @@ public class Creature {
     int baseAttack;
     int range;
 
+    @Transient
+    int maxHp = hitPoints;
 
-    //int level;
 
-/*
-    void changeHitPoints(int value){
-
-        if(value > 0 ){
-
-            hitPoints = Math.min(maxHitPoints, hitPoints+value);
-
-        }
-        if(value < 0){
-
-            hitPoints = Math.max(0, hitPoints + value);
-        }
-
+    @Transient
+    public int getMaxHp(){
+        return maxHp;
     }
-    */
 
 
 }

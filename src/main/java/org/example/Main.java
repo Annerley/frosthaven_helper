@@ -17,6 +17,11 @@ public class Main {
         int id = new CreatureHelper().getIdByName("Living Bones");
 
         a.add(new CreatureHelper().getCreature(id));
+
+        new CreatureHelper().changeHp((Creature) a.get(0), 2);
+
+        new CreatureHelper().changeHp((Creature) a.get(0), 2);
+
         System.out.println(a);
 
 

@@ -59,5 +59,18 @@ public class CreatureHelper {
 
     }
 
+    public void changeHp(Creature creature, int hp){
+
+        int res = creature.getHitPoints() + hp;
+
+        if (res < 0){
+            res = 0;
+        }
+        if(res > creature.getMaxHp()){
+            res = creature.getMaxHp();
+        }
+        creature.setHitPoints(res);
+    }
+
 
 }
